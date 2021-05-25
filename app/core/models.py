@@ -12,6 +12,9 @@ class UserManager(BaseUserManager):
 
     def create_user(self, email: str, password: Optional[str] = None, **extra_fields) -> "User":
         """Creates and saves a new User"""
+        if not email:
+            raise ValueError
+
         user = self.model(email=self.normalize_email(email), **extra_fields)
         # To store the password encrypted
         user.set_password(password)

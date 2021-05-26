@@ -32,4 +32,4 @@ RUN chown -R user:user /vol
 RUN chown -R 777 /vol/web/media
 # Switching docker to the user we just created
 # This is for security purposes, otherwise Docker keeps running with the Root user with lots of privileges
-USER user
+USER root

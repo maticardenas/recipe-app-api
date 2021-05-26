@@ -137,4 +137,11 @@ USE_TZ = True
 
 STATIC_URL = '/static/'
 
+MEDIA_URL = '/media/'
+
+# tells django where to store the media files (already created in our docker container)
+MEDIA_ROOT = '/vol/web/media'
+
+STATIC_ROOT = '/vol/web/static'
+
 AUTH_USER_MODEL = "core.User" # app.Model

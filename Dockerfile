@@ -18,7 +18,14 @@ COPY ./app /app
 RUN mkdir -p /vol/web/media
 RUN mkdir -p /vol/web/static
 # Creates a user that will be used for running applications only
-RUN adduser -D user
+#RUN adduser -D user
+
+RUN adduser \
+    --disabled-password \
+    --gecos '' \
+    --home /app \
+user && chown -R user /app
+
 # owner can do everything
 RUN chown -R user:user /vol/
 # the rest can read and execute

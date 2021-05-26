@@ -29,7 +29,7 @@ user && chown -R user:user /app
 # owner can do everything
 RUN chown -R user:user /vol
 # the rest can read and execute
-RUN chown -R 755 /vol/web
+RUN chown -R 777 /vol/web/media
 # Switching docker to the user we just created
 # This is for security purposes, otherwise Docker keeps running with the Root user with lots of privileges
 USER user

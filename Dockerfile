@@ -24,7 +24,7 @@ RUN adduser \
     --disabled-password \
     --gecos '' \
     --home /app \
-user && chown -R user /app
+user && chown -R user:user /app
 
 # owner can do everything
 RUN chown -R user:user /vol

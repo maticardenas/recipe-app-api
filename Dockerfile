@@ -27,7 +27,7 @@ RUN adduser \
 user && chown -R user /app
 
 # owner can do everything
-RUN chown -R user:user /vol/
+RUN chown -R user:user /vol
 # the rest can read and execute
 RUN chown -R 755 /vol/web
 # Switching docker to the user we just created
